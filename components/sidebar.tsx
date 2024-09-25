@@ -32,7 +32,7 @@ const iconOptions = [
 
 function Sidebar() {
   const [opened, { toggle }] = useDisclosure();
-  const [focusedIndex, setFocusedIndex] = useState(null);
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = () => {
