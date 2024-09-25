@@ -25,3 +25,13 @@ body {
     text-wrap: balance;
   }
 }
+
+a {
+  text-decoration: none !important; /* Remove underline */
+  color: inherit !important; /* Inherit color */
+}
+
+a:focus,
+a:active {
+  outline: none !important; /* Remove focus outline */
+}

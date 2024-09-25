@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// Sidebar.tsx
+
 "use client";
 import { AppShell, Burger, Text, Stack, ActionIcon, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -86,42 +86,52 @@ function Sidebar() {
           <Stack>
             {iconOptions.map(({ icon: IconComponent, label, route }, index) => (
               <Link href={route} key={label} passHref>
-                <Stack
-                  align="center"
-                  gap={0}
-                  onClick={() => setFocusedIndex(index)}
-                  style={{
-                    cursor: "pointer",
-                    backgroundColor:
-                      focusedIndex === index ? "#17171e" : "transparent",
-                    padding: "5px",
-                    borderRadius: "5px",
-                    borderRight:
-                      focusedIndex === index
-                        ? "4px solid #665dc3"
-                        : "4px solid transparent",
-                  }}
-                >
-                  <ActionIcon
-                    size={42}
-                    variant="default"
-                    aria-label={label}
-                    title={label}
-                    bg={focusedIndex === index ? "#17171e" : "#1c1c26"}
-                    bd={focusedIndex === index ? "#17171e" : "#1c1c26"}
-                    c="#e6e6f6"
+                <span style={{ textDecoration: "none" }}>
+                  <Stack
+                    align="center"
+                    gap={0}
+                    onClick={() => setFocusedIndex(index)}
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor:
+                        focusedIndex === index ? "#17171e" : "transparent",
+                      padding: "5px",
+                      borderRadius: "5px",
+                      borderRight:
+                        focusedIndex === index
+                          ? "4px solid #665dc3"
+                          : "4px solid transparent",
+                      textDecoration: "none", // Ensure no underline
+                      color: "inherit",
+                    }}
                   >
-                    <IconComponent
+                    <ActionIcon
+                      size={42}
+                      variant="default"
+                      aria-label={label}
+                      title={label}
                       style={{
-                        width: rem(24),
-                        height: rem(24),
+                        backgroundColor:
+                          focusedIndex === index ? "#17171e" : "#1c1c26",
+                        border:
+                          focusedIndex === index
+                            ? "4px solid #17171e"
+                            : "4px solid #1c1c26",
+                        color: "#e6e6f6",
                       }}
-                    />
-                  </ActionIcon>
-                  <Text size="md" c="#e6e6f6">
-                    {label}
-                  </Text>
-                </Stack>
+                    >
+                      <IconComponent
+                        style={{
+                          width: rem(24),
+                          height: rem(24),
+                        }}
+                      />
+                    </ActionIcon>
+                    <Text size="md" color="#e6e6f6">
+                      {label}
+                    </Text>
+                  </Stack>
+                </span>
               </Link>
             ))}
           </Stack>
