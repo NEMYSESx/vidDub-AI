@@ -26,6 +26,9 @@ function Home() {
   }, []);
 
   const titleTop = Math.max(0, 100 - scrollY);
+  const handleMessage = () => {
+    alert("only cutter route button work");
+  };
 
   return (
     <>
@@ -98,6 +101,7 @@ function Home() {
                   borderColor: "#665dc3",
                   marginBottom: "20px",
                 }}
+                onClick={handleMessage}
               >
                 Browse my files
               </Button>
