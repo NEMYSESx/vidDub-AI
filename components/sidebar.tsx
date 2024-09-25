@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Sidebar.tsx
 "use client";
 import { AppShell, Burger, Text, Stack, ActionIcon, rem } from "@mantine/core";
